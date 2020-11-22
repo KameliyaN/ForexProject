@@ -16,7 +16,6 @@ class ArticleForm(forms.ModelForm):
     def clean_title(self):
         title = self.cleaned_data.get('title', '')
 
-
         if not title[0].isupper():
             raise ValidationError('Title must starts with uppercase letter!')
         return title

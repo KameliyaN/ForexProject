@@ -18,9 +18,8 @@ class Article(models.Model):
         return f'{self.title}'
 
 
-
-
 class Comment(models.Model):
     text = models.CharField(max_length=200)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=timezone.now)

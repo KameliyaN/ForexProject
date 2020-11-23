@@ -18,8 +18,8 @@ from django.views.generic import CreateView, DetailView, UpdateView, DeleteView,
 
 from accounts.models import Profile
 from common_app.decorators import user_is_article_author_or_admin
-from common_app.forms import ArticleForm
-from common_app.models import Article
+from common_app.forms import ArticleForm, CommentForm
+from common_app.models import Article, Comment
 
 
 def homepage(request):
@@ -94,3 +94,19 @@ class ArticlesUserAllView(LoginRequiredMixin, ListView):
         return Article.objects.filter(user_id=pk)
         # queryset = super(ArticlesUserAllView, self).get_queryset()
         # return queryset.filter(user_id=self.kwargs['pk'])
+
+
+class NewCommentView(LoginRequiredMixin, CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'common_app/comment_create.html'
+
+    def form_valid(self, form):
+        comment = form.save(commit=False)
+        comment.user = self.request.user.profile
+        pk = self.kwargs['pk']
+        article = Article.objects.get(pk=pk)
+        comment.article = article
+
+        comment.save()
+        return redirect('view article', pk)

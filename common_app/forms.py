@@ -20,14 +20,16 @@ class ArticleForm(forms.ModelForm):
             raise ValidationError('Title must starts with uppercase letter!')
         return title
 
-    def clean_content(self):
-        content = self.cleaned_data['content']
-        if not content:
-            raise ValidationError('This field is required')
-        return content
+    # def clean_content(self):
+    #     content = self.cleaned_data['content']
+    #     if not content:
+    #         raise ValidationError('This field is required')
+    #     return content
 
 
 class CommentForm(forms.ModelForm):
+    text = forms.CharField(widget=forms.Textarea())
+
     class Meta:
         model = Comment
         exclude = ('user', 'article')

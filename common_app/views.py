@@ -11,7 +11,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
@@ -54,15 +54,17 @@ class CreateArticleView(LoginRequiredMixin, CreateView):
         article.save()
         return super(CreateArticleView, self).form_valid(form)
 
-    # def form_invalid(self, form):
-    #     """If the form is invalid, render the invalid form."""
-    #     return self.render_to_response(self.get_context_data(form=form))
-
 
 class ArticleDetailView(LoginRequiredMixin, DetailView):
     model = Article
     context_object_name = 'article'
     template_name = "common_app/article_view.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ArticleDetailView, self).get_context_data(**kwargs)
+        comment_form = CommentForm()
+        context['comment_form'] = comment_form
+        return context
 
 
 @method_decorator(user_is_article_author_or_admin, name='dispatch')
@@ -99,7 +101,6 @@ class ArticlesUserAllView(LoginRequiredMixin, ListView):
 class NewCommentView(LoginRequiredMixin, CreateView):
     model = Comment
     form_class = CommentForm
-    template_name = 'common_app/comment_create.html'
 
     def form_valid(self, form):
         comment = form.save(commit=False)

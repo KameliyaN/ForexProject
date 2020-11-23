@@ -1,6 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator
+from django.forms import HiddenInput
 from django.utils.translation import ugettext_lazy as _
 from common_app.models import Article, Comment
 

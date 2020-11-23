@@ -54,12 +54,12 @@
 
     </div>
     <div class="jumbotron ">
-        <h5><em>Article comments:</em></h5>
+        <h4 class="text-center"><em><u> Article`s comments:</u></em></h4>
         <br>
 
         {% if article.comment_set.all %}
             {% for comment in  article.comment_set.all %}
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="max-width: 640px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
                             {% if  comment.user.picture %}
@@ -101,7 +101,18 @@
 
         {% else %}
             <p>Be the first and share your opinion with us!</p>
+
         {% endif %}
-        <a class="btn btn-secondary" href="{% url 'create comment' article.pk %}">Comment</a>
+        <form method="POST" action="{% url 'create comment' article.pk %}">
+            <h3>Add a comment:</h3>
+            {% csrf_token %}
+            {{ comment_form|crispy }}
+
+
+            <button type="submit" class="btn btn-secondary">Add</button>
+
+        </form>
+
+
     </div>
 {% endblock %}

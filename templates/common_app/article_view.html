@@ -76,13 +76,16 @@
                                 <p class="card-text">{{ comment.text }}</p>
                                 <p class="card-text"><small class="text-muted">Last updated {{ comment.date }}</small>
                                 </p>
-                                {% if request.user.is_superuser%}
+
+                                {% if request.user.username == comment.user.username or request.user.is_superuser %}
+
 
                                     <a class="inline-related" style="color: green"
                                        href="{% url 'edit article' article.pk %}">Edit </a>
                                     <a class="inline-related" style="color: red"
                                        href="{% url 'delete article' article.pk %}">Delete </a>
                                 {% endif %}
+
                             </div>
 
                         </div>

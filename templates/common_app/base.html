@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
 
@@ -25,9 +26,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'create article' %}">Add news</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'signup' %}">Placeholder</a>
-            </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Currencies
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
         </ul>
         <span class="navbar-text">
              {% if user.is_authenticated %}
@@ -65,10 +74,16 @@
 <div class="progress">
     <div class="container color-white">
         <div class="row" style="text-align: center">
-            <div style="margin-right:50px"><h6>LON <small>+1</small></h6></div>
-            <div style="margin-right:50px"><h6>SDNY<small>+10</small></h6></div>
-            <div style="margin-right:50px"><h6>NY <small>-4</small></h6></div>
-            <div style="margin-right:50px"><h6>TYO <small>+9</small></h6></div>
+            <div style="margin-right: 95px"><p><strong>USD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>GBP </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>EUR </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>JPY </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>CHF </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>AUD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>NZD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>CAD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>CNH </strong></p></div>
+
 
         </div>
 
@@ -86,6 +101,6 @@
     </div>
 </div>
 
-
 </body>
+
 </html>

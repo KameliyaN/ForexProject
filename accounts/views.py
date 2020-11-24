@@ -36,7 +36,6 @@ def signup(request):
 def login_view(request):
     form = LoginForm()
     if request.method == 'POST':
-
         form = LoginForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']

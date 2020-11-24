@@ -4,8 +4,11 @@
 
 {% block body_block %}
     {% if form.errors %}
-        <p style="color:indianred"><strong><em>Your username and password didn't match. Please try again.</em> </strong>
-        </p>
+        <div class="form-group col-md-6 mb-0">
+            <p style="color:indianred"><strong><em>Your username and password didn't match. Please try again.</em>
+            </strong>
+            </p>
+        </div>
     {% endif %}
 
 
@@ -14,9 +17,10 @@
         <input type="hidden" name="return_url" value="{{ request.GET.next }}"/>
         {% csrf_token %}
         <br>
-        <h2>Login</h2>
+
 
         <div class="form-group col-md-6 mb-0">
+            <h2>Login</h2>
             {{ form.username|as_crispy_field }}
 
         </div>
@@ -24,17 +28,19 @@
             {{ form.password|as_crispy_field }}
         </div>
 
-
-        <button type="submit" class="btn btn-secondary">Login</button>
+        <div class="form-group col-md-6 mb-0">
+            <button type="submit" class="btn btn-secondary">Login</button>
+        </div>
         <br>
         <br>
+        <div class="form-group col-md-6 mb-0">
         <span>Don`t have an account?<a style="color:red"
                                        href="{% url 'signup' %}?next={{ request.GET.next }}">Sign up here</a></span>
-        <br>
-        <span>Forgot your password?<a style="color:red"
-                                      href="{% url 'password_reset' %}">Reset password</a></span>
+            <br>
+            <span>Forgot your password?<a style="color:red"
+                                          href="{% url 'password_reset' %}">Reset password</a></span>
 
-
+        </div>
     </form>
 
 

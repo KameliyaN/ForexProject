@@ -80,10 +80,10 @@
                                 {% if request.user.username == comment.user.username or request.user.is_superuser %}
 
 
-                                    <a class="inline-related" style="color: green"
-                                       href="{% url 'edit article' article.pk %}">Edit </a>
+                                    <a class="inline-related"  href="{% url 'edit comment' comment.pk article.pk %}" style="color: green"
+                                       >Edit </a>
                                     <a class="inline-related" style="color: red"
-                                       href="{% url 'delete article' article.pk %}">Delete </a>
+                                       href="{% url 'delete comment' comment.pk article.pk %}">Delete </a>
                                 {% endif %}
 
                             </div>
@@ -116,3 +116,6 @@
 
     </div>
 {% endblock %}
+
+
+

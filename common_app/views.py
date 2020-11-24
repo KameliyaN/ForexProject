@@ -93,6 +93,7 @@ class ArticlesUserAllView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         pk = self.kwargs['pk']
+
         return Article.objects.filter(user_id=pk)
         # queryset = super(ArticlesUserAllView, self).get_queryset()
         # return queryset.filter(user_id=self.kwargs['pk'])
@@ -108,6 +109,27 @@ class NewCommentView(LoginRequiredMixin, CreateView):
         pk = self.kwargs['pk']
         article = Article.objects.get(pk=pk)
         comment.article = article
-
         comment.save()
         return redirect('view article', pk)
+
+
+class CommentUpdateView(LoginRequiredMixin, UpdateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = "common_app/comment_edit.html"
+
+    def form_valid(self, form):
+        comment = form.save(commit=False)
+        article_pk = self.kwargs['article_pk']
+        article = Article.objects.get(pk=article_pk)
+        comment.article = article
+        comment.save()
+        return redirect('view article', article_pk)
+
+
+class CommentDeleteView(LoginRequiredMixin, DeleteView):
+    model = Comment
+    context_object_name = 'comment'
+
+    def get_success_url(self):
+        return reverse_lazy('view article', kwargs={'pk': self.kwargs['article_pk']})

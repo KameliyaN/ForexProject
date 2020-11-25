@@ -1,4 +1,5 @@
 import requests
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 
@@ -10,6 +11,7 @@ from currencies.forms import CurrencyForm
 from currencies.models import Currency
 
 
+@login_required
 def currencies_live_quotes(request):
     params = {
         'token': 'sgfnw2wtulfkxlbid2dg',

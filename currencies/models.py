@@ -7,7 +7,7 @@ class Currency(models.Model):
     symbol = models.CharField(max_length=5)
     central_bank = models.CharField(max_length=100)
     current_interest_rate = models.URLField()
-    currency_history = models.CharField(max_length=200)
+    currency_history = models.TextField()
     picture = models.ImageField(upload_to='currency_pics', blank=True, null=True)
 
     def __str__(self):

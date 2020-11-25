@@ -1,0 +1,33 @@
+{% extends 'common_app/base.html' %}
+{% load static %}
+{% block body_block %}
+    <link rel="stylesheet" href="{% static 'accounts/css/profile_pic.css' %}"/>
+    <div class="container">
+        <h1 class='text-center'>Currencies</h1>
+        {% if currencies %}
+            <div class="row">
+                {% for currency in currencies %}
+                    <div class="col-lg-6">
+                        <br>
+                        <div class="card" style="width: 18rem;">
+                            {% if currency.picture %}
+                                <img src="{{ currency.picture.url }}" alt="Place for picture">
+                            {% else %}
+                                <img id="user_pic" src="{% static 'accounts/images/default_user.png' %}" alt="">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ currency.symbol }} </h5>
+
+                                <a href="{% url 'detail currency' currency.pk %}" class="btn btn-secondary">See
+                                    details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h3>There are no currencies added!Add some.</h3>
+        {% endif %}
+    </div>
+{% endblock %}

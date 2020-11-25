@@ -3,9 +3,6 @@
 
 {% block body_block %}
     <link rel="stylesheet" href="{% static 'accounts/css/profile_pic.css' %}"/>
-    {#        <div class="container-fluid">#}
-    {#            <div class="row" >#}
-    {#                <div class="col-8" >#}
 
     <blockquote class="blockquote text-center">
         <h3 class="mb-0"><em>Forex world Latest News</em></h3>
@@ -36,42 +33,11 @@
         <br>
 
         <div class="text-center">
-            <a  href="{% url 'create article' %}"><big>Add news</big></a>
+            <a href="{% url 'create article' %}"><big>Add news</big></a>
         </div>
 
     {% endif %}
 
-    </div>
-    <br>
-    <div class="col">
 
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th scope="col">Currency</th>
-                <th scope="col">Current price</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            {% for curr in currencies %}
-                <tr>
-                    <td class="name">{{ curr.currency }}</td>
-                    <td>
-                        <span class="value">{{ curr.value }}</span>
-                    </td>
-
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
-
-    {#        </div>#}
-    {##}
-    {#    </div>#}
-    {##}
-    {#    </div>#}
 
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'common_app/base.html' %}
+{% load crispy_forms_filters %}
+{% block body_block %}
+    <form method="POST" action="" enctype="multipart/form-data">
+        <h3>Add currency:</h3>
+        {% csrf_token %}
+        {{ form|crispy }}
+
+
+        <button type="submit" class="btn btn-secondary">Add</button>
+        <a class="btn btn-success" href="javascript:history.back()">Cancel</a>
+    </form>
+{% endblock %}

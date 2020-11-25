@@ -1,0 +1,11 @@
+{% extends 'common_app/base.html' %}
+{% load crispy_forms_filters %}
+{% block body_block %}
+     <form method="POST" action="">
+    <h3>Are you sure you want to delete "{{ currency.name }}"?</h3>
+        {% csrf_token %}
+        <br>
+     <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-success" href="javascript:history.back()">Back</a>
+    </form>
+{% endblock %}

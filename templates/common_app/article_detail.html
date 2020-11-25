@@ -54,7 +54,8 @@
 
     </div>
     <div class="jumbotron ">
-        <h4 class="text-center"><em><u> News`s comments:</u></em></h4>
+        <h4 class="text-center"><em> News`s comments( {{ article.comment_set.count }} ):</em></h4>
+
         <br>
 
         {% if article.comment_set.all %}
@@ -80,8 +81,9 @@
                                 {% if request.user.username == comment.user.username or request.user.is_superuser %}
 
 
-                                    <a class="inline-related"  href="{% url 'edit comment' comment.pk article.pk %}" style="color: green"
-                                       >Edit </a>
+                                    <a class="inline-related" href="{% url 'edit comment' comment.pk article.pk %}"
+                                       style="color: green"
+                                    >Edit </a>
                                     <a class="inline-related" style="color: red"
                                        href="{% url 'delete comment' comment.pk article.pk %}">Delete </a>
                                 {% endif %}
@@ -100,7 +102,7 @@
             {% endfor %}
 
         {% else %}
-            <p class="text-center"><em>Be the first and share your opinion with us!</em> </p>
+            <p class="text-center"><em>Be the first and share your opinion with us!</em></p>
 
         {% endif %}
         <form method="POST" action="{% url 'create comment' article.pk %}">

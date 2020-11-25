@@ -34,13 +34,12 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-
-                    <a class="dropdown-item" href="#">Live quotes</a>
-                    <a class="dropdown-item" href="#">Currency Info</a>
+                    <a class="dropdown-item" href={% url 'all_currency' %}>Currencies all</a>
+                    <a class="dropdown-item" href="{% url 'live quotes' %}">Live currency quotes</a>
                     <a class="dropdown-item" href="#">Useful links</a>
                     <div class="dropdown-divider"></div>
                     {% if request.user.is_superuser %}
-                        <a class="dropdown-item" href="#">Add currency</a>
+                        <a class="dropdown-item" href="{% url 'add currency' %}">Add currency</a>
                     {% endif %}
 
                 </div>
@@ -82,7 +81,7 @@
 <div class="progress">
     <div class="container color-white">
         <div class="row" style="text-align: center">
-            <div style="margin-right: 95px"><p><strong>USD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong> USD </strong></p></div>
             <div style="margin-right: 95px"><p><strong>GBP </strong></p></div>
             <div style="margin-right: 95px"><p><strong>EUR </strong></p></div>
             <div style="margin-right: 95px"><p><strong>JPY </strong></p></div>

@@ -58,7 +58,7 @@ class CreateArticleView(LoginRequiredMixin, CreateView):
 class ArticleDetailView(LoginRequiredMixin, DetailView):
     model = Article
     context_object_name = 'article'
-    template_name = "common_app/article_view.html"
+    template_name = "common_app/article_detail.html"
 
     def get_context_data(self, **kwargs):
         context = super(ArticleDetailView, self).get_context_data(**kwargs)

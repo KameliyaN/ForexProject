@@ -22,4 +22,5 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('accounts/', include('accounts.urls')),
                   path('', include('common_app.urls')),
+                  path('currencies/', include('currencies.urls'))
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

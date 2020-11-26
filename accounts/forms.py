@@ -15,6 +15,7 @@ from accounts.models import Profile
 
 
 class SignUpForm(UserCreationForm):
+    use_required_attribute = False
     username = forms.CharField(
         validators=[MinLengthValidator(6)])
 
@@ -48,8 +49,7 @@ class SignUpForm(UserCreationForm):
 class LoginForm(AuthenticationForm):
     class Meta:
         model = User
-
-    fields = ('username', 'password1')
+        fields = ('username', 'password1')
 
 
 class UserForm(forms.ModelForm):
@@ -59,6 +59,7 @@ class UserForm(forms.ModelForm):
 
 
 class ProfileForm(forms.ModelForm):
+    use_required_attribute = False
     username = forms.CharField(
         validators=[MinLengthValidator(6)])
     email = forms.CharField(validators=[EmailValidator()])

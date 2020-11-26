@@ -7,6 +7,7 @@ from common_app.models import Article, Comment
 
 
 class ArticleForm(forms.ModelForm):
+    use_required_attribute = False
     title = forms.CharField(widget=forms.TextInput())
     content = forms.CharField(widget=forms.Textarea())
 
@@ -29,6 +30,7 @@ class ArticleForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+
     text = forms.CharField(widget=forms.Textarea())
 
     class Meta:

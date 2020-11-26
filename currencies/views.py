@@ -7,8 +7,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, ListView, DetailView, DeleteView
 
-from currencies.forms import CurrencyForm
-from currencies.models import Currency
+from currencies.forms import CurrencyForm, CategoryForm, LinksForm
+from currencies.models import Currency, Category, Links
 
 
 @login_required
@@ -63,3 +63,34 @@ class CurrencyAllView(LoginRequiredMixin, ListView):
     model = Currency
     context_object_name = 'currencies'
     template_name = 'currencies/currency_all.html'
+
+
+class CategoryCreateView(LoginRequiredMixin, CreateView):
+    model = Category
+    form_class = CategoryForm
+    template_name = 'currencies/category_add.html'
+
+    def form_valid(self, form):
+        category = form.save(commit=False)
+        category.save()
+        return redirect('all links')
+
+
+class LinkCreateView(LoginRequiredMixin, CreateView):
+    model = Links
+    form_class = LinksForm
+    template_name = 'currencies/links_add.html'
+
+    def form_valid(self, form):
+        links = form.save(commit=False)
+        links.save()
+        return redirect('all links')
+
+
+class LinkAllView(LoginRequiredMixin, ListView):
+    model = Category
+    context_object_name = 'categories'
+    template_name = 'currencies/links_all.html'
+
+    def get_queryset(self):
+        return Category.objects.all()

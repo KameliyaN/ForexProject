@@ -1,6 +1,6 @@
 from django import forms
 
-from currencies.models import Currency
+from currencies.models import Currency, Category, Links
 
 
 class CurrencyForm(forms.ModelForm):
@@ -10,4 +10,16 @@ class CurrencyForm(forms.ModelForm):
 
     class Meta:
         model = Currency
+        fields = '__all__'
+
+
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+
+class LinksForm(forms.ModelForm):
+    class Meta:
+        model = Links
         fields = '__all__'

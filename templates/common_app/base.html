@@ -35,11 +35,13 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                     <a class="dropdown-item" href={% url 'all_currency' %}>Currencies all</a>
-                    <a class="dropdown-item" href="{% url 'live quotes' %}">Live currency quotes</a>
-                    <a class="dropdown-item" href="#">Useful links</a>
+                    <a class="dropdown-item" href="{% url 'live quotes' %}">Live  Quotes</a>
+                    <a class="dropdown-item" href="{% url 'all links' %}">Useful links</a>
                     <div class="dropdown-divider"></div>
                     {% if request.user.is_superuser %}
                         <a class="dropdown-item" href="{% url 'add currency' %}">Add currency</a>
+                        <a class="dropdown-item" href="{% url 'add category' %}">Add category</a>
+                        <a class="dropdown-item" href="{% url 'add links' %}">Add link</a>
                     {% endif %}
 
                 </div>
@@ -59,6 +61,7 @@
                          <li class="navbar-nav mr-auto">
                           <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
                      </li>
+
                      {% endif %}
                       </ul>
 

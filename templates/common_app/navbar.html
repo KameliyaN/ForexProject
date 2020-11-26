@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">Forex world</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'create article' %}">Add news</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Currencies
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <a class="dropdown-item" href={% url 'all_currency' %}>Currencies all</a>
+                    <a class="dropdown-item" href="{% url 'live quotes' %}">Live Quotes</a>
+                    <a class="dropdown-item" href="{% url 'all links' %}">Useful links</a>
+                    <div class="dropdown-divider"></div>
+                    {% if request.user.is_superuser %}
+                        <a class="dropdown-item" href="{% url 'add currency' %}">Add currency</a>
+                        <a class="dropdown-item" href="{% url 'add category' %}">Add category</a>
+                        <a class="dropdown-item" href="{% url 'add links' %}">Add link</a>
+                    {% endif %}
+
+                </div>
+            </li>
+        </ul>
+        <span class="navbar-text">
+             {% if user.is_authenticated %}
+                 Hello,{{ user.username }}!
+                 <ul class="navbar-nav mr-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'logout' %}">Log out</a>
+                     </li>
+                     <li class="navbar-nav mr-auto">
+                          <a class="nav-link" href="{% url 'user-profile' %}">Profile</a>
+                     </li>
+                     {% if user.is_superuser %}
+                         <li class="navbar-nav mr-auto">
+                          <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+                     </li>
+
+                     {% endif %}
+                      </ul>
+
+
+             {% else %}
+                 Start your forex journey here!
+                 <ul class="navbar-nav mr-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'login' %}">Log in</a>
+                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
+                    </li>
+                  </ul>
+             {% endif %}
+
+    </span>
+    </div>
+</nav>
+<div class="progress">
+    <div class="container color-white">
+        <div class="row" style="text-align: center">
+            <div style="margin-right: 95px"><p><strong> USD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>GBP </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>EUR </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>JPY </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>CHF </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>AUD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>NZD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>CAD </strong></p></div>
+            <div style="margin-right: 95px"><p><strong>CNH </strong></p></div>
+
+
+        </div>
+
+    </div>
+</div>

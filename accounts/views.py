@@ -29,6 +29,7 @@ def signup(request):
             user = authenticate(username=username, password=raw_password)
             login(request, user)
             return redirect(return_url)
+        return render(request, 'accounts/signup.html', {'form': form})
 
     return render(request, 'accounts/signup.html', {'form': form})
 
@@ -44,6 +45,7 @@ def login_view(request):
             if user:
                 login(request, user)
                 return redirect('home')
+        return render(request, 'registration/login.html', {'form': form})
     return render(request, 'registration/login.html', {'form': form})
 
 
@@ -56,7 +58,6 @@ def logout_view(request):
 @login_required
 def profile(request):
     profile = request.user.profile
-
     context = {'profile': profile}
 
     return render(request, 'accounts/user_profile.html', context)
@@ -76,6 +77,7 @@ def profile_edit(request):
             form.save()
             return redirect('user-profile')
 
+        return render(request, 'accounts/edit_profile.html', {'form': form})
     context = {'form': form,
                }
     return render(request, 'accounts/edit_profile.html', context)
@@ -102,7 +104,7 @@ def change_password(request):
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
             user = form.save()
-            update_session_auth_hash(request, user)  # Important!
+            update_session_auth_hash(request, user)  # Important!For user to be logged in because the session is updated after pass change
 
             return redirect('password_change_done')
 
@@ -115,4 +117,3 @@ def change_password(request):
 @login_required
 def change_password_done(request):
     return render(request, 'accounts/change_password_done.html', {})
-

@@ -3,11 +3,10 @@
 {% block body_block %}
     <link rel="stylesheet" href="{% static 'accounts/css/profile_pic.css' %}"/>
 
+    <div class="row justify-content-center">
+        <div class="col-10">
 
 
-    <div class="main-container">
-
-        <div class="row">
             <div class="col-md-7">
                 <div class="card card-body" id="user-info-box">
                     {% if  profile.picture %}
@@ -19,7 +18,8 @@
                     <br>
                     <p><em>Username</em>: <br><strong>{{ profile }}</strong></p>
                     <hr>
-                    <p><em>Full name</em>: <br><strong>{{ profile.first_name }} {{ profile.last_name }}</strong></p>
+                    <p><em>Full name</em>: <br><strong>{{ profile.first_name }} {{ profile.last_name }}</strong>
+                    </p>
                     <hr>
                     <p><em>Email</em>: <strong>{{ profile.email }}</strong></p>
 
@@ -32,6 +32,6 @@
 
         </div>
     </div>
-    </div>
+
 
 {% endblock %}

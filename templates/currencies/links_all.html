@@ -1,20 +1,25 @@
 {% extends 'common_app/base.html' %}
 {% block body_block %}
-    {% if categories %}
-        {% for category in categories %}
-            <br>
-            <h3 class="text-left" style="color:brown">{{ category.name }}</h3>
-            <hr>
-            <ul >
-            {% for l in category.links_set.all %}
-                <br>
-                <li ><h5>Description: {{ l.description }} <a href="{{ l.link }}"  target="_blank">click the link</a>
-                    </h5></li>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            {% if categories %}
+                {% for category in categories %}
+                    <br>
+                    <h3 class="text-left" style="color:brown">{{ category.name }}</h3>
+                    <hr>
+                    <ul>
+                        {% for l in category.links_set.all %}
+                            <br>
+                            <li><h5>Description: {{ l.description }} <a href="{{ l.link }}" target="_blank">click the
+                                link</a>
+                            </h5></li>
+                        {% endfor %}
+                    </ul>
+                    <hr>
                 {% endfor %}
-            </ul>
-            <hr>
-        {% endfor %}
-    {% else %}
-        <h4 class="text-center">There are no links added!</h4>
-    {% endif %}
+            {% else %}
+                <h4 class="text-center">There are no links added!</h4>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

@@ -7,13 +7,6 @@ from django.core.validators import MinLengthValidator, EmailValidator
 from accounts.models import Profile
 
 
-#
-# class LoginForm(AuthenticationForm):
-#     class Meta:
-#         model = User
-#         fields = ('username', 'password1')
-
-
 class SignUpForm(UserCreationForm):
     use_required_attribute = False
     username = forms.CharField(

@@ -2,26 +2,29 @@
 
 
 {% block body_block %}
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <h3 class="text-center">Live currency quotes</h3>
+            <br>
+            <table id="dtBasicExample" class="table">
+                <thead>
+                <tr>
+                    <th class="th-sm">Name
+                    </th>
+                    <th class="th-sm">Position
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for curr in currencies %}
+                    <tr>
 
-    <h3 class="text-center">Live currency quotes</h3>
-    <br>
-    <table id="dtBasicExample" class="table">
-        <thead>
-        <tr>
-            <th class="th-sm">Name
-            </th>
-            <th class="th-sm">Position
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for curr in currencies %}
-            <tr>
-
-                <td>{{ curr.currency }}</td>
-                <td>{{ curr.value }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                        <td>{{ curr.currency }}</td>
+                        <td>{{ curr.value }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

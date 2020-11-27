@@ -1,0 +1,70 @@
+{% load static %}
+{% load crispy_forms_filters %}
+<link rel="stylesheet" href="{% static 'accounts/css/small_pic.css' %}"/>
+
+
+<h4 class="text-center"><em> News`s comments( {{ article.comment_set.count }} ):</em></h4>
+
+<br>
+{% if article.comment_set.all %}
+    {% for comment in  article.comment_set.all reversed%}
+        <div class="card mb-3" style="max-width: 640px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    {% if  comment.user.picture %}
+                        <img id="small_pic" class="card-img" src="{{ comment.user.picture.url }}"
+                             alt="">
+                    {% else %}
+                        <img id="small_pic" class="card-img"
+                             src="{% static 'accounts/images/default_user.png' %}" alt="">
+                    {% endif %}
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ comment.user.username }}</h5>
+                        <p class="card-text">{{ comment.text }}</p>
+                        <p class="card-text"><small class="text-muted">Last
+                            updated {{ comment.date }}</small>
+                        </p>
+
+                        {% if request.user.username == comment.user.username or request.user.is_superuser %}
+
+
+                            <a class="inline-related"
+                               href="{% url 'edit comment' comment.pk article.pk %}"
+                               style="color: green"
+                            >Edit </a>
+                            <a class="inline-related" style="color: red"
+                               href="{% url 'delete comment' comment.pk article.pk %}">Delete </a>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <br>
+
+
+    {% endfor %}
+
+{% else %}
+    <p class="text-center"><em>Be the first and share your opinion with us!</em></p>
+
+{% endif %}
+<form method="POST" action="{% url 'create comment' article.pk %}">
+    <h4>Add a comment:</h4>
+    {% csrf_token %}
+    {{ comment_form|crispy }}
+
+
+    <button type="submit" class="btn btn-secondary">Add</button>
+
+</form>
+
+
+

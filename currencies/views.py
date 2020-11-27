@@ -76,6 +76,24 @@ class CategoryCreateView(LoginRequiredMixin, CreateView):
         return redirect('all links')
 
 
+class CategoryUpdateView(LoginRequiredMixin, UpdateView):
+    model = Category
+    form_class = CategoryForm
+    template_name = 'currencies/category_edit.html'
+
+    def form_valid(self, form):
+        category = form.save(commit=False)
+        category.save()
+        return redirect('all links')
+
+
+class CategoryDeleteView(LoginRequiredMixin, DeleteView):
+    model = Category
+    success_url = reverse_lazy('all links')
+    template_name = 'currencies/category_delete.html'
+    context_object_name = 'category'
+
+
 class LinkCreateView(LoginRequiredMixin, CreateView):
     model = Links
     form_class = LinksForm
@@ -94,3 +112,21 @@ class LinkAllView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Category.objects.all()
+
+
+class LinkUpdateView(LoginRequiredMixin, UpdateView):
+    model = Links
+    form_class = LinksForm
+    template_name = 'currencies/links_edit.html'
+
+    def form_valid(self, form):
+        link = form.save(commit=False)
+        link.save()
+        return redirect('all links')
+
+
+class LinkDeleteView(LoginRequiredMixin, DeleteView):
+    model = Links
+    success_url = reverse_lazy('all links')
+    template_name = 'currencies/links_delete.html'
+    context_object_name = 'link'

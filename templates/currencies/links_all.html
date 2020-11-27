@@ -3,16 +3,40 @@
     <div class="row justify-content-center">
         <div class="col-8">
             {% if categories %}
-                {% for category in categories %}
+                {% for category in categories  %}
                     <br>
-                    <h3 class="text-left" style="color:brown">{{ category.name }}</h3>
+                    <h3 class="text-left" style="color:brown">{{ category.name }} {% if request.user.is_superuser %}
+                        <span>
+                                    <a class="btn blue-gradient btn-rounded" style="color: darkgreen"
+                                       href="{% url 'edit category' category.pk %}">Edit<i
+                                            class="far fa-gem ml-1"></i>
+                                    </a>
+                                    <a class="btn btn-indigo btn-rounded" style="color: red"
+                                       href="{% url 'delete category' category.pk %}">Delete<i
+                                            class="fas fa-download ml-1"></i>
+                                    </a>
+                                </span>
+                    {% endif %}</h3>
                     <hr>
                     <ul>
                         {% for l in category.links_set.all %}
                             <br>
-                            <li><h5>Description: {{ l.description }} <a href="{{ l.link }}" target="_blank">click the
-                                link</a>
+                            <li><h5>Description: {{ l.description }} <a href="{{ l.link }}" target="_blank">
+                                Link</a>
+                                {% if request.user.is_superuser %}
+                                    <span>
+                                    <a class="btn blue-gradient btn-rounded" style="color: darkgreen"
+                                       href="{% url 'edit links' l.pk %}">Edit<i
+                                            class="far fa-gem ml-1"></i>
+                                    </a>
+                                    <a class="btn btn-indigo btn-rounded" style="color: red"
+                                       href="{% url 'delete links' l.pk %}">Delete<i
+                                            class="fas fa-download ml-1"></i>
+                                    </a>
+                                </span>
+                                {% endif %}
                             </h5></li>
+                            <hr>
                         {% endfor %}
                     </ul>
                     <hr>

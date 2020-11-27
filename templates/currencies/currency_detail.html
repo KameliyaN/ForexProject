@@ -1,37 +1,46 @@
 {% extends 'common_app/base.html' %}
 {% load static %}
 {% block body_block %}
-    <link rel="stylesheet" href="{% static 'accounts/css/profile_pic.css' %}"/>
-    <div class="jumbotron text-center blue-grey lighten-5">
-        {% if currency.picture %}
-            <img src="{{ currency.picture.url }}" alt="Place for picture">
-        {% else %}
-            <img id="user_pic" src="{% static 'accounts/images/default_user.png' %}" alt="">
-        {% endif %}
-        <h4 class="card-title h4"> Name : {{ currency.name }}</h4>
-        <p class="indigo-text my-4 font-weight-bold">Symbol : {{ currency.symbol }}</p>
-        <p class="indigo-text my-4 font-weight-bold">Central Bank : {{ currency.central_bank }}</p>
-        <a href="{{ currency.current_interest_rate }}" class="green-text" target="_blank">
-            <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>See current interest rate here</h6>
-        </a>
 
-        <div class="row d-flex justify-content-center">
-            <div class="col-xl-7 pb-2">
-                <p class="card-text">{{ currency.currency_history }}</p>
+    <div class="row justify-content-center">
+        <div class="col-8">
+
+            <div class="jumbotron text-center blue-grey lighten-5">
+                {% if currency.picture %}
+                    <img src="{{ currency.picture.url }}" alt="Place for picture">
+                {% else %}
+                    <img id="user_pic" src="{% static 'accounts/images/default_user.png' %}" alt="">
+                {% endif %}
+                <h4 class="card-title h4"> Name : {{ currency.name }}</h4>
+                <p class="indigo-text my-4 font-weight-bold">Symbol : {{ currency.symbol }}</p>
+                <p class="indigo-text my-4 font-weight-bold">Central Bank : {{ currency.central_bank }}</p>
+                <a href="{{ currency.current_interest_rate }}" class="green-text" target="_blank">
+                    <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>See current interest rate here</h6>
+                </a>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-xl-7 pb-2">
+                        <p class="card-text">{{ currency.currency_history }}</p>
+                    </div>
+                </div>
+                <hr class="my-4 pb-2">
+                {% if request.user.is_superuser %}
+                    <a class="btn blue-gradient btn-rounded" style="color: blue"
+                       href="{% url 'edit currency' currency.pk %}">Edit<i
+                            class="far fa-gem ml-1"></i>
+                    </a>
+                    <a class="btn btn-indigo btn-rounded" style="color: red"
+                       href="{% url 'delete currency' currency.pk %}">Delete<i
+                            class="fas fa-download ml-1"></i>
+                    </a>
+                {% endif %}
+                <a class="btn btn-indigo btn-rounded" style="color: black" href="{% url 'all_currency' %}">See all
+                    currencies<i
+                            class="fas fa-download ml-1"></i>
+
+
             </div>
+
         </div>
-        <hr class="my-4 pb-2">
-        {% if request.user.is_superuser %}
-            <a class="btn blue-gradient btn-rounded" style="color: blue" href="{% url 'edit currency' currency.pk %}">Edit<i
-                    class="far fa-gem ml-1"></i>
-            </a>
-            <a class="btn btn-indigo btn-rounded" style="color: red" href="{% url 'delete currency' currency.pk %}">Delete<i
-                    class="fas fa-download ml-1"></i>
-            </a>
-        {% endif %}
-        <a class="btn btn-indigo btn-rounded" style="color: black" href="{% url 'all_currency' %}">See all currencies<i
-                    class="fas fa-download ml-1"></i>
-
     </div>
-
 {% endblock %}

@@ -1,6 +1,5 @@
 from functools import wraps
 
-
 from django.http import HttpResponse
 
 from common_app.models import Article
@@ -13,6 +12,7 @@ def user_is_article_author_or_admin(view):
         if article.user == request.user.profile or request.user.is_superuser:
             return view(request, *args, **kwargs)
         else:
+
             return HttpResponse('You are not authorised for this operation!')
 
     return wrap

@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
-from django.test import TestCase, Client
-
+from django.test import TestCase, RequestFactory
+from .views import profile
 # Create your tests here.
 from django.urls import reverse
 
@@ -9,9 +9,9 @@ from accounts.models import Profile
 
 
 class ProfileFormTest(TestCase):
-    def test_saveProfileInput_whenValid_ShouldSaveProfile(self):
+    def test_saveProfileInput_whenValid_ShouldPassTest(self):
         data = {
-            'username': 'Alelia',
+            'username': 'Amelia',
             'first_name': 'Alelia',
             'last_name': 'Georgieva',
             'email': 'ameligeorgieva@abv.bg',
@@ -47,11 +47,15 @@ class ProfileFormTest(TestCase):
 
 class ProfileViewTests(TestCase):
     def setUp(self):
-        self.test_client = Client()
+        self.factory = RequestFactory()
+        self.user = User.objects.create_user(username='Jacob', password='top_secret1', email='jacob@gmail.com')
 
-    def test_getProfile_whenProfile_ShouldRenderProfile(self):
-        profile = Profile(username='testprofile', first_name='Anelia', last_name='Ivanova', email='anelia@yahoo.com')
-        #don`t have user
-        profile.save()
-        response = self.test_client.get(reverse('user-profile'))
-        self.assertTemplateUsed(response,'accounts/user_profile.html')
+    def test_Userprofile_WhenGetRequest_ShouldReturnUserProfile(self):
+        request = self.factory.get('accounts/profile/')
+        request.user = self.user
+        response = profile(request)
+        self.assertEqual(response.status_code, 200)
+
+    def test_AnonymousUser_whenAddNews_ShouldReturnLoginNext(self):
+        response = self.client.get('/create_article/', follow=True)
+        self.assertRedirects(response, '/accounts/login/?next=/create_article/')

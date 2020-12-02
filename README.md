@@ -14,19 +14,19 @@
  1. **What is Forex** -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.ecause of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world
  1. **Project purpose**
 ## Getting Started
-1.Clone the repository to your local machine:\
+1. Clone the repository to your local machine:\
 `git clone https://github.com/KameliyaN/ForexProject.git`
 
-2.Install the requirements:\
+1. Install the requirements:\
 `pip install -r requirements.txt`
 
-3.Apply the migrations:\
+1. Apply the migrations:\
 `python manage.py migrate`
  
-4.Run the development server:\
+1. Run the development server:\
  `python manage.py runserver`
 
-5.The project will be available at:\
+1. The project will be available at:\
  `127.0.0.1:8000`
 
 ## Technologies

@@ -8,7 +8,9 @@ What is Forex-The foreign exchange (also known as FX or forex) market is a globa
 2.[Technologies](#technologies)\
 3.[Setup](#setup)
 ## General info
+bldfsdfsfhsdflshfsfhsfhsdfsf
 ## Technologies
+dfsfsdfsdfsfsdfsdfsfsf
 ## Setup
 1.Clone the repository to your local machine:
 

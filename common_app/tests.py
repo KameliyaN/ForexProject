@@ -13,7 +13,6 @@ class ArticleTests(TestCase):
         self.factory = RequestFactory()
         self.user = User.objects.create_user(
             username='jacob', email='jacob@…', password='top_secret')
-        # self.article = Article.objects.create(title='Test title', content='My test content', user_id=self.user.id)
 
     def test_AddArticle_whenAuthenticatedUser_shouldReturn200StatusCode(self):
         request = self.factory.get('/create_article/')
@@ -27,7 +26,7 @@ class ArticleTests(TestCase):
         response = CreateArticleView.as_view()(request)
         self.assertEqual(response.url, '/accounts/login/?next=/create_article/')
 
-    def test_EditArticle_whenUserIsCreator_should(self):
+    def test_EditArticle_whenUserIsCreator_shouldReturn200StatusCode(self):
         article = Article.objects.create(title='Test title', content='My test content', user_id=self.user.id)
         request = self.factory.get('/edit_article/<int:pk>/')
         request.user = self.user
@@ -41,8 +40,16 @@ class ArticleTests(TestCase):
         request = self.factory.get('/edit_article/<int:pk>/')
         request.user = user_one
         response = ArticleUpdateView.as_view()(request, **{'pk': article.pk})
-        self.assertEqual(response.status_code, 403)
-        x=8
+        self.assertEqual(response.content, b'You are not authorised for this operation!')
 
-    def tearDown(self):
-        self.user.delete()
+    def test_EditArticle_whenUserIsSuperuser_shouldReturn200StatusCode(self):
+        article = Article.objects.create(title='Test title', content='My test content', user_id=self.user.id)
+        request = self.factory.get('/edit_article/<int:pk>/')
+        super_user = User.objects.create_user(
+            username='TheKing', email='king@…', password='top_secret_king', is_superuser=True)
+        request.user = super_user
+        response = ArticleUpdateView.as_view()(request, **{'pk': article.pk})
+        self.assertEqual(response.status_code, 200)
+
+
+

@@ -28,7 +28,6 @@ class ProfileFormTest(TestCase):
             'email': 'ameligeorgieva@abv.bg',
 
         }
-
         form = ProfileForm(data)
         self.assertFalse(form.is_valid())
 
@@ -40,7 +39,6 @@ class ProfileFormTest(TestCase):
             'email': 'ameligeorgieva@abv.bg',
 
         }
-
         form = ProfileForm(data)
         self.assertFalse(form.is_valid())
 
@@ -50,12 +48,14 @@ class ProfileViewTests(TestCase):
         self.factory = RequestFactory()
         self.user = User.objects.create_user(username='Jacob', password='top_secret1', email='jacob@gmail.com')
 
-    def test_Userprofile_WhenGetRequest_ShouldReturnUserProfile(self):
+    def test_ViewUserProfile_WhenGetRequest_ShouldReturnUserProfile(self):
         request = self.factory.get('accounts/profile/')
         request.user = self.user
         response = profile(request)
         self.assertEqual(response.status_code, 200)
 
-    def test_AnonymousUser_whenAddNews_ShouldReturnLoginNext(self):
-        response = self.client.get('/create_article/', follow=True)
-        self.assertRedirects(response, '/accounts/login/?next=/create_article/')
+    def test_EditUserProfile_WhenGetRequest_ShouldReturnEditPage(self):
+        request = self.factory.get('accounts/edit_profile/')
+        request.user = self.user
+        response = profile(request)
+        self.assertEqual(response.status_code, 200)

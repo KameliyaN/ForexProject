@@ -1,5 +1,5 @@
 # ForexProject
-Forex Project is an app that help people to learn forex trading.Users can also write and read articles/news and see live currency quotes.
+Forex Project is an app that helps people to learn forex trading.Users can also write,read and comment articles/news and see live currency quotes.
 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-green.svg)](https://www.python.org/)
 [![Django 3.6](https://img.shields.io/badge/django-3.1.3-green.svg)](https://www.djangoproject.com/)

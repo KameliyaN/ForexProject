@@ -17,17 +17,15 @@ dfsfsdfsdfsfsdfsdfsfsf
 1.Clone the repository to your local machine:\
 `git clone https://github.com/KameliyaN/ForexProject.git`
 
-2.Install the requirements:
-
+2.Install the requirements:\
 `pip install -r requirements.txt`
 
-3.Apply the migrations:
-
- `python manage.py migrate`
+3.Apply the migrations:\
+`python manage.py migrate`
  
-4.Run the development server:
- 
+4.Run the development server:\
  `python manage.py runserver`
 
-5.The project will be available at: `127.0.0.1:8000`
+5.The project will be available at:\
+ `127.0.0.1:8000`
 

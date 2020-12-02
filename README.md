@@ -54,4 +54,12 @@ and admins
 
 
 ### Features
--forex news,comments,useful links and live quotes
+* View all latest forex news 
+* View all news(articles) of a given user
+* Add/Create news(articles)
+* Comment news(articles)
+* View all comments
+* View live currency quotes
+* View Currencies list
+* View detail for a currency 
+* View Useful links organized by categories

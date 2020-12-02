@@ -5,15 +5,16 @@ What is Forex-The foreign exchange (also known as FX or forex) market is a globa
 [![Django 3.6](https://img.shields.io/badge/django-3.1.3-green.svg)](https://www.djangoproject.com/)
 
 1.[General info](#general-info)\
-2.[Technologies](#technologies)\
-3.[Setup](#setup)
+2.[Features](#features)\
+3.[Technologies](#technologies)\
+4.[Getting started](#getting-started)
 ## General info
 bldfsdfsfhsdflshfsfhsfhsdfsf
+##Features
 ## Technologies
 dfsfsdfsdfsfsdfsdfsfsf
-## Setup
-1.Clone the repository to your local machine:
-
+## Getting Started
+1.Clone the repository to your local machine:\
 `git clone https://github.com/KameliyaN/ForexProject.git`
 
 2.Install the requirements:

@@ -3,7 +3,7 @@ What is Forex-The foreign exchange (also known as FX or forex) market is a globa
 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-green.svg)](https://www.python.org/)
 [![Django 3.6](https://img.shields.io/badge/django-3.1.3-green.svg)](https://www.djangoproject.com/)
-
+##Table of Contents
 1.[General info](#general-info)\
 2.[Features](#features)\
 3.[Technologies](#technologies)\

@@ -26,7 +26,7 @@ and admins
     * Form validation
     * Testing (unit testing)
     * Class-based views
-    * Extended Django user(Profile,using Signals)
+    * Extended Django user(Profile,using signals)
     * Decorators and Mixins(checking for user permissions)
     * Bootstrap
     * Crispy forms
@@ -58,7 +58,9 @@ and admins
 * View all latest forex news 
 * View all news(articles) of a given user
 * Add/Create news(articles)
+* Edit and delete your news(articles)
 * Comment news(articles)
+* Edit and delete your comments
 * View all comments
 * View live currency quotes
 * View Currencies list

@@ -8,7 +8,7 @@ Forex Project is an app that helps people to learn **forex trading**.Users can a
 * [About the Project](#about-the-project)
 * [Technologies](#technologies)
 * [Getting started](#getting-started)
-* [Features](#features)
+* [Usage](#usage)
 
 ### About the project
  1. **What is Forex** -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.Because of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world.
@@ -53,7 +53,8 @@ and admins
  `127.0.0.1:8000`
 
 
-### Features
+### Usage
+
 * View all latest forex news 
 * View all news(articles) of a given user
 * Add/Create news(articles)

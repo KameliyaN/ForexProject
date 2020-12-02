@@ -11,8 +11,8 @@
 * [Features](#features)
 
 ## About the project
- 1.What is Forex -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.ecause of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world
-  
+ 1. **What is Forex** -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.ecause of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world
+ 1. **Project purpose**
 ## Getting Started
 1.Clone the repository to your local machine:\
 `git clone https://github.com/KameliyaN/ForexProject.git`

@@ -1,19 +1,18 @@
-# ForexProject-forex news,comments,useful links and live quotes
-What is Forex-The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.
+# ForexProject
+
 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-green.svg)](https://www.python.org/)
 [![Django 3.6](https://img.shields.io/badge/django-3.1.3-green.svg)](https://www.djangoproject.com/)
 
 ## Table of Contents
-1.[General info](#general-info)\
-2.[Features](#features)\
-3.[Technologies](#technologies)\
-4.[Getting started](#getting-started)
-## General info
-bldfsdfsfhsdflshfsfhsfhsdfsf
-##Features
-## Technologies
-dfsfsdfsdfsfsdfsdfsfsf
+* [About the Project](#about-the-project)
+* [Getting started](#getting-started)
+* [Technologies](#technologies)
+* [Features](#features)
+
+## About the project
+ 1.What is Forex -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.ecause of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world
+  
 ## Getting Started
 1.Clone the repository to your local machine:\
 `git clone https://github.com/KameliyaN/ForexProject.git`
@@ -30,3 +29,6 @@ dfsfsdfsdfsfsdfsdfsfsf
 5.The project will be available at:\
  `127.0.0.1:8000`
 
+## Technologies
+## Features
+-forex news,comments,useful links and live quotes

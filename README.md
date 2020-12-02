@@ -1,8 +1,8 @@
 # ForexProject-forex news,comments,useful links and live quotes
-What is Forex-The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.
-- [![Python 3.6](https://img.shields.io/badge/python-3.8-green.svg)](https://www.python.org/)
+What is Forex-The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.\
+[![Python 3.8](https://img.shields.io/badge/python-3.8-green.svg)](https://www.python.org/)
+[![Django 3.6](https://img.shields.io/badge/django-3.1.3-green.svg)](https://www.djangoproject.com/)
 ## Requirements
-* Python 3.8
 * Django==3.1.3
 * asgiref==3.3.1
 * certifi==2020.11.8

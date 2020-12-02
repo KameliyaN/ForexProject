@@ -6,8 +6,9 @@ What is Forex-The foreign exchange (also known as FX or forex) market is a globa
 
 1.[General info](#general info)\
 2.[Technologies](#technologies)\
-2.[Setup](#setup)\
-*About The Project
+3.[Setup](#setup)\
+## General info
+## Technologies
 ## Setup
 1.Clone the repository to your local machine:
 
@@ -26,3 +27,4 @@ What is Forex-The foreign exchange (also known as FX or forex) market is a globa
  `python manage.py runserver`
 
 5.The project will be available at: `127.0.0.1:8000`
+

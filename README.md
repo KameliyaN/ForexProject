@@ -11,9 +11,12 @@ Forex Project is an app that helps people to learn forex trading.Users can also 
 * [Features](#features)
 
 ### About the project
- 1. **What is Forex** -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.ecause of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world
+ 1. **What is Forex** -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.Because of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world.
  1. **Project purpose**
 ### Technologies
+* [Python 3.8](https://www.python.org/downloads/release/python-380/)
+* [Django 3.1](https://www.djangoproject.com/)
+* [Bootstrap 4](https://getbootstrap.com/)
 ### Getting Started
 1. Clone the repository to your local machine:\
 `git clone https://github.com/KameliyaN/ForexProject.git`

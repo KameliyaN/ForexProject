@@ -63,6 +63,6 @@ and admins
 * Edit and delete your comments
 * View all comments
 * View live currency quotes
-* View Currencies list
+* View  all currencies list
 * View detail for a currency 
 * View Useful links organized by categories

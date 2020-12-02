@@ -56,13 +56,13 @@ and admins
 ### Usage
 
 * View all latest forex news 
+* View full news(article) with its comments
 * View all news(articles) of a given user
 * Add/Create news(articles)
 * Edit and delete your news(articles)
 * Comment news(articles)
 * Edit and delete your comments
-* View all comments
 * View live currency quotes
 * View  all currencies list
-* View detail for a currency 
+* View details for a currency 
 * View Useful links organized by categories

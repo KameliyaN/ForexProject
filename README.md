@@ -74,6 +74,9 @@ and admins
 <img src="static/github/images/add_news.png" height="300">
 
 * Edit and delete your news(articles)
+
+<img src="static/github/images/editarticle.png" height="300">
+
 * Comment news(articles)
 * Edit and delete your comments
 * View live currency quotes

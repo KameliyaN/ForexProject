@@ -64,6 +64,7 @@ and admins
 * View full news(article) with its comments
 <img src="static/github/images/article.png" height="300">
 * View all news(articles) of a given user
+<img src="static/github/images/alluserarticles.png" height="300">
 * Add/Create news(articles)
 * Edit and delete your news(articles)
 * Comment news(articles)

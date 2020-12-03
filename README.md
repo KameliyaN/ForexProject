@@ -12,7 +12,7 @@ Forex Project is an app that helps people to learn **forex trading**.Users can a
 
 ### About the project
  
-![Homepage pic](static/accounts/images/home_page.png )
+<img src="static/accounts/images/home_page.png" height="300" width="300" alt="'">
 
  1. **What is Forex** -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.Because of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world.
  1. **Project functionalities:**
@@ -60,7 +60,7 @@ and admins
 
 * View all latest forex news 
 <img src="static/accounts/images/homepnews.png" height="100">
-![Homepage pic](static/accounts/images/homepnews.png )
+
 * View full news(article) with its comments
 * View all news(articles) of a given user
 * Add/Create news(articles)

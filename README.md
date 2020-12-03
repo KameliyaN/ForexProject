@@ -93,4 +93,4 @@ and admins
 
 * View Useful links organized by categories
 
-<img src="static/github/images/usefulinks.png" height="300">
+<img src="static/github/images/usefulinks.png" height="300" alt="">

@@ -38,6 +38,7 @@ class CreateArticleView(LoginRequiredMixin, CreateView):
         article = form.save(commit=False)
         # profile = Profile.objects.get(user_id=self.request.user.id)
         article.user = self.request.user.profile
+
         article.save()
         return super(CreateArticleView, self).form_valid(form)
 

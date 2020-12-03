@@ -59,7 +59,7 @@ and admins
 ### Usage
 
 * View all latest forex news 
-<img src="static/accounts/images/homepnews.png" height="100">
+<img src="static/accounts/images/homepnews.png" height="300">
 
 * View full news(article) with its comments
 * View all news(articles) of a given user

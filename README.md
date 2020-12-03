@@ -80,6 +80,17 @@ and admins
 * Comment news(articles)
 * Edit and delete your comments
 * View live currency quotes
-* View  all currencies list
+
+<img src="static/github/images/live_quotes.png" height="300">
+
+* View  all currencies list 
+
+<img src="static/github/images/allcur.png" height="300">
+
 * View details for a currency 
+
+<img src="static/github/images/detail_cur.png" height="300">
+
 * View Useful links organized by categories
+
+<img src="static/github/images/usefulinks.png" height="300">

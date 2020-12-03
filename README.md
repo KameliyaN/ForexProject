@@ -59,37 +59,37 @@ and admins
 ### Usage
 
 * View all latest forex news 
-<img src="static/github/images/homepnews.png" height="300">
+<img src="static/github/images/homepnews.png" height="300" alt="">
 
 * View full news(article) with its comments
 
-<img src="static/github/images/article.png" height="300">
+<img src="static/github/images/article.png" height="300" alt="">
 
 * View all news(articles) of a given user
 
-<img src="static/github/images/alluserarticles.png" height="300">
+<img src="static/github/images/alluserarticles.png" height="300" alt="">
 
 * Add/Create news(articles)
 
-<img src="static/github/images/add_news.png" height="300">
+<img src="static/github/images/add_news.png" height="300" alt="">
 
 * Edit and delete your news(articles)
 
-<img src="static/github/images/editarticle.png" height="300">
+<img src="static/github/images/editarticle.png" height="300" alt="">
 
 * Comment news(articles)
 * Edit and delete your comments
 * View live currency quotes
 
-<img src="static/github/images/live_quotes.png" height="300">
+<img src="static/github/images/live_quotes.png" height="300" alt="">
 
 * View  all currencies list 
 
-<img src="static/github/images/allcur.png" height="300">
+<img src="static/github/images/allcur.png" height="300" alt="">
 
 * View details for a currency 
 
-<img src="static/github/images/detail_cur.png" height="300">
+<img src="static/github/images/detail_cur.png" height="300" alt="">
 
 * View Useful links organized by categories
 

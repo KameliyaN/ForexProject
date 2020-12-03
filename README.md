@@ -62,11 +62,17 @@ and admins
 <img src="static/github/images/homepnews.png" height="300">
 
 * View full news(article) with its comments
-<img src="static/github/images/article.png" height="300">\
+
+<img src="static/github/images/article.png" height="300">
+
 * View all news(articles) of a given user
-<img src="static/github/images/alluserarticles.png" height="300">\
+
+<img src="static/github/images/alluserarticles.png" height="300">
+
 * Add/Create news(articles)
-<img src="static/github/images/add_news.png" height="300">\
+
+<img src="static/github/images/add_news.png" height="300">
+
 * Edit and delete your news(articles)
 * Comment news(articles)
 * Edit and delete your comments

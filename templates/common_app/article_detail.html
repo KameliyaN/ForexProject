@@ -29,12 +29,13 @@
                         <p class="font-weight-normal">by
                             {% if   article.user.first_name and  article.user.last_name %}
                             <a><strong>{{ article.user.first_name }} {{ article.user.last_name }}</strong></a>, {{ article.date }}
-                        </p>
+
                             {% else %}
+
                                  <a><strong>{{ article.user.username }}</strong></a>, {{ article.date }}
 
                         {% endif %}
-
+                         </p>
                         <a class="btn btn-success" href="{% url 'edit article' article.pk %}">Edit news</a>
                         <a class="btn btn-danger" href="{% url 'delete article' article.pk %}">Delete news</a>
                     </div>

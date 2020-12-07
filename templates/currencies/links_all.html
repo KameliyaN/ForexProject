@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-8">
             {% if categories %}
-                {% for category in categories  %}
+                {% for category in categories %}
                     <br>
                     <h3 class="text-left" style="color:brown">{{ category.name }} {% if request.user.is_superuser %}
                         <span>

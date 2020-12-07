@@ -32,7 +32,7 @@
                         </p>
                             {% else %}
                                  <a><strong>{{ article.user.username }}</strong></a>, {{ article.date }}
-                        </p>
+
                         {% endif %}
 
                         <a class="btn btn-success" href="{% url 'edit article' article.pk %}">Edit news</a>

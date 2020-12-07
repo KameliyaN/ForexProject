@@ -63,6 +63,7 @@ class CurrencyAllView(LoginRequiredMixin, ListView):
     model = Currency
     context_object_name = 'currencies'
     template_name = 'currencies/currency_all.html'
+    paginate_by = 3
 
 
 class CategoryCreateView(LoginRequiredMixin, CreateView):

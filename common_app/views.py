@@ -26,6 +26,8 @@ class ViewAllArticles(ListView):
     model = Article
     context_object_name = 'articles'
     template_name = "common_app/index.html"
+    paginate_by = 3
+    ordering = ['-date']
 
 
 class CreateArticleView(LoginRequiredMixin, CreateView):
@@ -38,7 +40,6 @@ class CreateArticleView(LoginRequiredMixin, CreateView):
         article = form.save(commit=False)
         # profile = Profile.objects.get(user_id=self.request.user.id)
         article.user = self.request.user.profile
-
         article.save()
         return super(CreateArticleView, self).form_valid(form)
 
@@ -78,13 +79,18 @@ class ArticlesUserAllView(LoginRequiredMixin, ListView):
     model = Article
     context_object_name = 'articles'
     template_name = "common_app/view_all_user_articles.html"
+    paginate_by = 3
 
     def get_queryset(self):
         pk = self.kwargs['pk']
-
-        return Article.objects.filter(user_id=pk)
+        return Article.objects.filter(user_id=pk).order_by('-date')
         # queryset = super(ArticlesUserAllView, self).get_queryset()
         # return queryset.filter(user_id=self.kwargs['pk'])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total'] = self.get_queryset().count
+        return context
 
 
 class NewCommentView(LoginRequiredMixin, CreateView):

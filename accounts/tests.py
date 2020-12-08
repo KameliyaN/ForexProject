@@ -1,11 +1,26 @@
 from django.contrib.auth.models import User
 from django.test import TestCase, RequestFactory
+
+from . import models
 from .views import profile
 # Create your tests here.
 from django.urls import reverse
 
 from accounts.forms import ProfileForm
 from accounts.models import Profile
+
+
+class TestProfileModel(TestCase):
+    def test_profile_creation(self):
+        user = User.objects.create(
+            username="testuser", password="testPassword")
+        # Check that a Profile instance has been created
+        self.assertIsInstance(user.profile, models.Profile)
+        # Call the save method of the user to activate the signal
+        # again, and check that it doesn't try to create another
+        # profile instance
+        user.save()
+        self.assertIsInstance(user.profile, models.Profile)
 
 
 class ProfileFormTest(TestCase):

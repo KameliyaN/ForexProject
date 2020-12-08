@@ -10,6 +10,9 @@ class Currency(models.Model):
     currency_history = models.TextField()
     picture = models.ImageField(upload_to='currency_pics', blank=True, null=True)
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return f'{self.name}'
 

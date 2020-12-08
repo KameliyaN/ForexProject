@@ -49,7 +49,13 @@ and admins
 1. Apply the migrations:\
 `python manage.py migrate`
 
-1. Get a free API Key at: https://currencydatafeed.com/ \
+1. Run the development server:\
+ `python manage.py runserver`
+
+1. The project will be available at:\
+ `127.0.0.1:8000`
+ 
+1. Get a free API Key at: https://currencydatafeed.com/ 
 ```
  def currencies_live_quotes(request):
     params = {
@@ -64,13 +70,6 @@ and admins
     return render(request, 'currencies/quotes.html', context) 
 ```
  
-1. Run the development server:\
- `python manage.py runserver`
-
-1. The project will be available at:\
- `127.0.0.1:8000`
-
-
 ### Usage
 
 * View all latest forex news 

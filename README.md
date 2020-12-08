@@ -50,7 +50,8 @@ and admins
 `python manage.py migrate`
 
 1. Get a free API Key at: https://currencydatafeed.com/ \
-``` def currencies_live_quotes(request):
+```
+ def currencies_live_quotes(request):
     params = {
         'token': 'Put your API Access Token here',
         'currency': 'EUR/USD USD/JPY GBP/USD AUD/USD USD/CAD'

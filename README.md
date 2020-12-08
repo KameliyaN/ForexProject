@@ -48,6 +48,20 @@ and admins
 
 1. Apply the migrations:\
 `python manage.py migrate`
+
+1. Get a free API Key at: https://currencydatafeed.com/ \
+``` def currencies_live_quotes(request):
+    params = {
+        'token': 'Put your API Access Token here',
+        'currency': 'EUR/USD USD/JPY GBP/USD AUD/USD USD/CAD'
+    }
+    api_result = requests.get('https://currencydatafeed.com/api/data.php', params)
+
+    api_response = api_result.json()
+    currencies = api_response['currency']
+    context = {'currencies': currencies}
+    return render(request, 'currencies/quotes.html', context) 
+```
  
 1. Run the development server:\
  `python manage.py runserver`

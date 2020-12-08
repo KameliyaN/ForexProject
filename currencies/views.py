@@ -110,6 +110,7 @@ class LinkAllView(LoginRequiredMixin, ListView):
     model = Category
     context_object_name = 'categories'
     template_name = 'currencies/links_all.html'
+    paginate_by = 2
 
     def get_queryset(self):
         return Category.objects.all()

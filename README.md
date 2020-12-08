@@ -59,7 +59,7 @@ and admins
 ### Usage
 
 * View all latest forex news 
-<img src="static/github/images/homepnews.png" height="300" alt="">
+<img src="static/github/images/homepage.png" height="300" alt="">
 
 * View full news(article) with its comments
 
@@ -85,7 +85,7 @@ and admins
 
 * View  all currencies list 
 
-<img src="static/github/images/allcur.png" height="300" alt="">
+<img src="static/github/images/curall.png" height="300" alt="">
 
 * View details for a currency 
 

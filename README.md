@@ -16,7 +16,7 @@ Forex Project is an app that helps people to learn **forex trading**.Users can a
 
  1. **What is Forex** -> The foreign exchange (also known as FX or forex) market is a global marketplace for exchanging national currencies against one another.Because of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world.
  1. **Project functionalities:**
-    * Participants: 
+    * Roles: 
         * Admin(has full CRUD for all products/content, created by users on the website)
         * Authenticated users(have full CRUD for all of their created content)
         * Unauthenticated users(have only get permissions)

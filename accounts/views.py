@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-from django.contrib import messages
 from django.contrib.auth import authenticate, login, update_session_auth_hash, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
@@ -104,7 +101,8 @@ def change_password(request):
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
             user = form.save()
-            update_session_auth_hash(request, user)  # Important!For user to be logged in because the session is updated after pass change
+            update_session_auth_hash(request,
+                                     user)  # Important!For user to be logged in because the session is updated after pass change
 
             return redirect('password_change_done')
 

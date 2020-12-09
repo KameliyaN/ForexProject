@@ -28,11 +28,11 @@
                         <p class="font-weight-normal">{{ article.content }}</p>
                         <p class="font-weight-normal">by
                             {% if   article.user.first_name and  article.user.last_name %}
-                            <a><strong>{{ article.user.first_name }} {{ article.user.last_name }}</strong></a>, {{ article.date }}
+                            <a><strong>{{ article.user.first_name }} {{ article.user.last_name }}</strong></a>, {{ article.date|date:"Y-m-d" }}
 
                             {% else %}
 
-                                 <a><strong>{{ article.user.username }}</strong></a>, {{ article.date }}
+                                 <a><strong>{{ article.user.username }}</strong></a>, {{ article.date|date:"Y-m-d" }}
 
                         {% endif %}
                          </p>

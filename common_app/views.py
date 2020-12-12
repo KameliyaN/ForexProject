@@ -1,10 +1,9 @@
-from django.shortcuts import render
+
 
 # Create your views here.
-from datetime import date
 
-import requests
-from django.contrib import messages
+
+
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect, HttpResponse

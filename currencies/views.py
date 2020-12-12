@@ -14,7 +14,7 @@ from currencies.models import Currency, Category, Links
 @login_required
 def currencies_live_quotes(request):
     params = {
-        'token': 'sgfnw2wtulfkxlbid2dg',
+        'token': 'y4uhurw5suke60rirzzd',
         'currency': 'EUR/USD USD/JPY GBP/USD AUD/USD USD/CAD'
     }
     api_result = requests.get('https://currencydatafeed.com/api/data.php', params)

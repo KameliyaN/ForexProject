@@ -13,7 +13,7 @@ from accounts.models import Profile
 class TestProfileModel(TestCase):
     def test_profile_creation(self):
         user = User.objects.create(
-            username="testuser", password="testPassword")
+            username="testuserJ", password="testPassword")
         # Check that a Profile instance has been created
         self.assertIsInstance(user.profile, models.Profile)
         # Call the save method of the user to activate the signal

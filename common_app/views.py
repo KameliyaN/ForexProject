@@ -1,12 +1,8 @@
-
-
 # Create your views here.
 
 
-
-
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -52,7 +48,15 @@ class ArticleDetailView(LoginRequiredMixin, DetailView):
         context = super(ArticleDetailView, self).get_context_data(**kwargs)
         comment_form = CommentForm()
         context['comment_form'] = comment_form
+
         return context
+
+    def get(self, request, *args, **kwargs):
+        try:
+            return super().get(request, *args, **kwargs)
+        except Http404:
+
+            return redirect('home')
 
 
 @method_decorator(user_is_article_author_or_admin, name='dispatch')

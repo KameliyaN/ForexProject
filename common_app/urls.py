@@ -12,6 +12,7 @@ urlpatterns = [
     path('view_all_user_articles/<int:pk>/', views.ArticlesUserAllView.as_view(), name='all user articles'),
     path('create_comment/<int:pk>/', views.NewCommentView.as_view(), name='create comment'),
     path('edit_comment/<int:pk>/<int:article_pk>/', views.CommentUpdateView.as_view(), name='edit comment'),
-    path('delete_comment/<int:pk>/<int:article_pk>/', views.CommentDeleteView.as_view(), name='delete comment')
+    path('delete_comment/<int:pk>/<int:article_pk>/', views.CommentDeleteView.as_view(), name='delete comment'),
+
 
 ]
